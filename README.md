@@ -1,6 +1,11 @@
 # wandbproxy
 * 用于将wandb log同步保存至其他平台，如mlflow.
 * 目前仅支持mlflow的log_metrics，暂不支持`{k: v}`之外的log, 如图片等.
+* v0.2.0: 
+  * 支持从wandb run中自动获取project， run name, config
+  * 同步于wandb.init()的mlflow.start_run(), 不再需要手动管理mlflow生命周期。
+* v0.1.0:
+  * 初始化提交。 
 # Usage
 ```
 pip install https://github.com/Looomo/wandbproxy
