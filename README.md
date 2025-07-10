@@ -18,11 +18,12 @@ wandb.init(
   project="test",
   config={},
   name="test",
+  mlflow_params = {} # if you want to set your own mlflow param
 )
 
 # Common setting of mlflow
 mlflow.set_tracking_uri(uri="http://127.0.0.1:8080")
-mlflow.start_run()
+
 
 # Training with logging
 epochs = args.epoch
@@ -33,6 +34,5 @@ for epoch in range(2, epochs):
     # this will log to wandb and mlflow at the same time
     wandb.log({"acc": acc, "loss": loss}, step = epoch)
 
-mlflow.end_run()
 
 ```
